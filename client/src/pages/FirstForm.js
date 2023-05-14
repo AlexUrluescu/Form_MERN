@@ -60,50 +60,77 @@ const FirstForm = ({userLogin, setUserLogin}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(dataForm);
+        console.log("Trimis");
+        alert("Formular trimis cu succes!")
 
-        const res = await fetch("http://localhost:5000/form1", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dataForm)
-        });
+        // console.log(dataForm);
 
-        const data = await res.json();
-        console.log(data);
+        // const res = await fetch("http://localhost:5000/form1", {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(dataForm)
+        // });
 
-        if(data.status === "ok"){
-            console.log('Post created succesfully');
-            setDataForm(initalDataForm)
-        }
+        // const data = await res.json();
+        // console.log(data);
 
-        else if(data.status === "error"){
-            alert("Nu esti logat")
-        }
+        // if(data.status === "ok"){
+        //     console.log('Post created succesfully');
+        //     setDataForm(initalDataForm)
+        // }
+
+        // else if(data.status === "error"){
+        //     alert("Nu esti logat")
+        // }
 
     }
 
     return(
         <div>
             <NavBar />
-            <div>
-                <div>
+            <div className="main">
+                <div className="first_title">
                     <h2>FirstForm</h2>
                 </div>
-                <form className="firstForm">
-                    <input onChange={handleChange} value={dataForm.coleges} type="text" name="coleges"/>
-                    <input onChange={handleChange} value={dataForm.class_plus} type="text" name="class_plus"/>
-                    <input onChange={handleChange} value={dataForm.teacher_help} type="text" name="teacher_help"/>
-                    <input onChange={handleChange} value={dataForm.city} type="text" name="city"/>
-                    <input onChange={handleChange} value={dataForm.hobby} type="text" name="hobby"/>
-                    <input onChange={handleChange} value={dataForm.study_hours} type="text" name="study_hours"/>
-                    <input onChange={handleChange} value={dataForm.concentration} type="text" name="concentration"/>
-                    <input onChange={handleChange} value={dataForm.teacher_comunication} type="text" name="teacher_comunication"/>
+                <div className="div_form">
+                    <form className="firstForm">
+                        <label htmlFor="input1">Label pt input 1</label>
+                        <input id="input1" onChange={handleChange} value={dataForm.coleges} type="text" name="coleges"/>
 
-                    <input type="submit" onClick={handleSubmit} value="Send"/>
-                </form>
+                        <label htmlFor="input2">Label pt input 2</label>
+                        <input id="input2" onChange={handleChange} value={dataForm.class_plus} type="text" name="class_plus"/>
+
+                        <label htmlFor="input3">Label pt input 3</label>
+                        <input id="input3" onChange={handleChange} value={dataForm.teacher_help} type="text" name="teacher_help"/>
+
+                        <label htmlFor="input4">Label pt input 4</label>
+                        <input id="input4" onChange={handleChange} value={dataForm.city} type="text" name="city"/>
+
+                        <label htmlFor="input8">Label pt input 4</label>
+                        <input id="input8" onChange={handleChange} value={dataForm.hobby} type="text" name="hobby"/>
+
+                        <label htmlFor="input5">Label pt input 3</label>
+                        <input id="input5" onChange={handleChange} value={dataForm.study_hours} type="text" name="study_hours"/>
+
+                        <label htmlFor="input6">Label pt input 3</label>
+                        <input id="input6" onChange={handleChange} value={dataForm.concentration} type="text" name="concentration"/>
+
+                        <label htmlFor="input7">Label pt input 3</label>
+                        <input id="input7" onChange={handleChange} value={dataForm.teacher_comunication} type="text" name="teacher_comunication"/>
+
+                        <div className="div_btn">
+                            <input id="btn_form" type="submit" onClick={handleSubmit} value="Send"/>
+                        </div>
+                    </form>
+                </div>
+
             </div>
+
+            <footer>
+                <span>Created by Madalina</span>
+            </footer>
         </div>
     )
 }

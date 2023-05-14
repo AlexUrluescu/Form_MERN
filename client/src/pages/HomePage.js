@@ -1,21 +1,17 @@
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import NavBar from "../components/NavBar";
-import Post from "../components/Post";
-import Loader from "../components/Loader";
+
 
 // import UserContext from "../context/UserContext";
 import { Link } from "react-router-dom";
 
 import myImage from "../static/poza3.png"
 import "../css/HomePage.css";
+import FormEx from "../components/FormEx";
 
 
 const HomePage = ({userLogin , setUserLogin}) => {
-  
-    const [ posts, setPosts ] = useState([]);
-    const [ query, setQuery ] = useState("");
-    const [loaderStatus, setLoaderStatus] = useState()
 
     useEffect(() => {
 
@@ -45,27 +41,6 @@ const HomePage = ({userLogin , setUserLogin}) => {
             
             }        
         
-
-        const fetchPosts = async () => {
-
-            try {
-                setLoaderStatus(true);
-                const res = await fetch("http://localhost:5000/posts");
-                const data = await res.json();
-    
-                console.log(data);
-                setPosts(data);
-                setLoaderStatus(false);
-
-            } catch (error) {
-                console.log(error);
-            }
-           
-        }
-
-        
-        fetchPosts();
-        
         sendData();
 
     }, [setUserLogin])
@@ -94,28 +69,17 @@ const HomePage = ({userLogin , setUserLogin}) => {
                     <img src={myImage} alt=""/>
                 </div>
             </div>
-            <div>
-                <Link to="/firstForm">First Form</Link>
-            </div>
-
-            <div className="container_data">
-                <h2>Posts</h2>
-                <div className="input_container">
-                    <input
-                        onChange={(e) => setQuery(e.target.value)}
-                        type="text" 
-                        name="search" 
-                        placeholder="Search user"
-                    />
+            <div className="container_forms">
+                <div className="div_title">Forms</div>
+                <div className="div_forms">
+                    <FormEx title="Form 1" link="/firstForm"/>
+                    <FormEx title="Form 2" link="/secondForm"/>
                 </div>
-
-                {loaderStatus ? <Loader /> : <div className="posts_container">
-                    {posts.filter((post) => post.subject.includes(query)).map((post, index) => (
-                        <Post key={index} subject={post.subject} details={post.details} price={post.price} user_name={post.user_name}/>
-                    ))}
-                </div>}
-                
-            </div>  
+            </div>
+            
+            <footer>
+                <span>Created by Madalina</span>
+            </footer>
         </div> 
     )
 }

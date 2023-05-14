@@ -21,7 +21,7 @@ const NavBar = ({setUserLogin}) => {
             </div>
             <div className="links">
                 <Link className="link" to="/"> Home </Link>
-                <Link className="link" to="/create"> Create </Link>
+                <Link className="link" to="/forms"> Forms </Link>
                 {isLoggedIn ? <Link className="logout" to="/login" onClick={handleClick}>Log out</Link>: <Link className="login" to="/login"> Login </Link>}
             </div>
         </div>
