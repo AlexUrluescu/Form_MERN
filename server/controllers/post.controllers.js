@@ -174,13 +174,13 @@ export const userData = async (req, res) => {
 
 export const postForm1 = async (req, res) => {
     try {
-        const {coleges, class_plus, teacher_help, city, hobby, study_hours, concentration, teacher_comunication, user_name} = req.body;
+        const {title, label1, label2, label3, label4, label5, label6, user_name} = req.body;
         
         if(user_name === 'undefined undefined'){
             return res.json({status: "error"})
         }
      
-        const newForm = new Form1({coleges, class_plus, teacher_help, city,hobby,study_hours, concentration, teacher_comunication, user_name})
+        const newForm = new Form1({title, label1, label2, label3, label4, label5, label6, user_name})
     
         console.log(newForm);
         await newForm.save()
@@ -192,3 +192,25 @@ export const postForm1 = async (req, res) => {
     }
 
 }
+
+
+// export const createPost = async (req, res) => {
+
+//     try {
+//         const {subject, details, price, user_name} = req.body;
+        
+//         if(user_name === 'undefined undefined'){
+//             return res.json({status: "error"})
+//         }
+     
+//         const newPost = new Post({subject, details, price, user_name})
+    
+//         console.log(newPost);
+//         await newPost.save()
+//         return res.json({status: "ok"});
+
+//     } catch (error) {
+//         return res.status(500).json({message: error.message})
+        
+//     }
+// };

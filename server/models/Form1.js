@@ -1,50 +1,49 @@
 import mongoose from "mongoose";
 
 const form1Schema = new mongoose.Schema({
-    coleges:{
+    title:{
         type: String,
         required: true,
         trim: true
     },
-    class_plus:{
+    label1:{
         type: String,
         required: true,
         trim: true
     },
-    teacher_help:{
+    label2:{
         type: String,
         required: true,
         trim: true
     },
-    city:{
+    label3:{
         type: String,
         required: true,
         trim: true
     },
-
-    hobby:{
-        type: String,
-        required: true,
-        trim: true
-    },
-
-    study_hours:{
+    label4:{
         type: String,
         required: true,
         trim: true
     },
 
-    concentration:{
+    label5:{
         type: String,
         required: true,
         trim: true
     },
 
-    teacher_comunication:{
+    label6:{
         type: String,
         required: true,
         trim: true
-    }
+    },
+
+    user_name:{
+        type: String,
+        required: true,
+        trim: true
+    },
 })
 
 export default mongoose.model('FirstForm', form1Schema);

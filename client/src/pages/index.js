@@ -4,6 +4,7 @@ import Register from "./Register";
 import Login from "./Login";
 import FirstForm from "./FirstForm";
 import Forms from "./Forms";
+import Create from "./Create";
 
 
 export {
@@ -12,5 +13,6 @@ export {
     Register,
     Login,
     FirstForm,
-    Forms
+    Forms,
+    Create
 }
