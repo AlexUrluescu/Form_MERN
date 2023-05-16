@@ -193,6 +193,18 @@ export const postForm1 = async (req, res) => {
 
 }
 
+export const getForms = async (req, res) => {
+    try {    
+        const forms = await Form1.find()
+        res.send(forms)
+        
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({message: error.message})
+    }
+
+};
+
 
 // export const createPost = async (req, res) => {
 
