@@ -69,13 +69,13 @@ const HomePage = ({userLogin , setUserLogin}) => {
                     <img src={myImage} alt=""/>
                 </div>
             </div>
-            <div className="container_forms">
+            {/* <div className="container_forms">
                 <div className="div_title">Forms</div>
                 <div className="div_forms">
                     <FormEx title="Form 1" link="/firstForm"/>
                     <FormEx title="Form 2" link="/secondForm"/>
                 </div>
-            </div>
+            </div> */}
             
             <footer>
                 <span>Created by Madalina</span>
