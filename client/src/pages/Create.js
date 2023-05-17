@@ -96,7 +96,8 @@ const Create = ({userLogin, setUserLogin}) => {
     return(
         <div>
             <NavBar setUserLogin={setUserLogin}/>
-            <div className="create_container">
+            <div className="create_container1">
+                <div className="cont_all">
                 <div className="create_box">
                     <div>
                         <h2>Create a post</h2>
@@ -116,6 +117,8 @@ const Create = ({userLogin, setUserLogin}) => {
                         </form>
                     </div>
                 </div>
+                </div>
+                
                 
             </div>
             
