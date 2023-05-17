@@ -205,6 +205,19 @@ export const getForms = async (req, res) => {
 
 };
 
+export const getFormSelect = async (req, res) => {
+    try {
+        const {id} = req.params;
+
+        const formSelect = await Form1.findById(id);
+
+        res.json(formSelect);
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 // export const createPost = async (req, res) => {
 

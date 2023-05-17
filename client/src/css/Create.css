@@ -41,7 +41,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    /* gap: 20px; */
 }
 
 .form_cont input{
@@ -51,7 +51,22 @@
     height: 50px;
     border-radius: 10px;
     padding: 0 10px;
+    margin-bottom: 40px;
+    margin-top:  5px;
 }
+
+
+/* .formSelect{
+    width: 350px;
+    border: 2px solid gainsboro;
+    outline: none;
+    height: 50px;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-bottom: 40px;
+    margin-top:  5px;
+} */
+
 
 .form_cont textarea{
     width: 250px;

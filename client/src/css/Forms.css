@@ -16,46 +16,60 @@
     /* background-color: aliceblue; */
     /* margin-top: 30px; */
     padding: 30px;
+    /* height: 400px; */
 
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 100px;
+    flex-wrap: wrap;
 }
 
 
 .form{
-    background: rgba(255, 255, 255, 0.51);
+    /* background: rgba(255, 255, 255, 0.51); */
+    /* background-color: red; */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.7px);
     -webkit-backdrop-filter: blur(3.7px);
 
     width: 280px;
-    padding: 20px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
 
     transition: all ease .4s;
 }
 
 .form:hover{
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .form_title{
     text-align: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-size: 25px;
     font-weight: 500;
     border-bottom: 2px solid gold;
     padding: 5px;
+    /* background-color: green; */
+    height: 30%;
 }
 
 .form_content{
      text-align: center;
+     /* background-color: blue; */
+     height: 40%;
 }
 
 .form_link{
     text-align: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    /* background-color: aqua; */
+    padding: 10px;
+    height: 10%;
 
 }
 

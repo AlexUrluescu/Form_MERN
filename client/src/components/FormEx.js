@@ -10,7 +10,7 @@ const FormEx = ({title, description, link}) => {
     <div className='form'>
         <div className='form_title'>{title}</div>
         <div className='form_content'>{description}</div>
-        <div className='form_link'><Link className='button_link' to={link}>Click</Link></div>
+        <div className='form_link'><Link className='button_link' to={`/forms/${link}`}>Click</Link></div>
     </div>
   )
 }

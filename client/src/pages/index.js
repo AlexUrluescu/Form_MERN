@@ -5,6 +5,7 @@ import Login from "./Login";
 import FirstForm from "./FirstForm";
 import Forms from "./Forms";
 import Create from "./Create";
+import FormSelect from "./FormSelect";
 
 
 export {
@@ -14,5 +15,6 @@ export {
     Login,
     FirstForm,
     Forms,
-    Create
+    Create,
+    FormSelect
 }

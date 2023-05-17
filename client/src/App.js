@@ -1,4 +1,4 @@
-import { NotFoundPage, HomePage, Register, Login, FirstForm, Create } from "./pages";
+import { NotFoundPage, HomePage, Register, Login, FirstForm, Create, FormSelect } from "./pages";
 import {Routes, Route } from "react-router-dom";
 import UserData from "./pages/UserData";
 import { useState, useEffect } from "react";
@@ -52,6 +52,7 @@ function App() {
         <Route path = '/' element = {<HomePage userLogin={userLogin} setUserLogin={setUserLogin} />} />
         <Route path="/register" element = {<Register />} />
         <Route path = '/forms' element = {<Forms userLogin={userLogin} setUserLogin={setUserLogin}/>} />
+        <Route path="/forms/:id" element = {<FormSelect setUserLogin={setUserLogin} />}/>
         <Route path='/login' element = {<Login userLogin = {userLogin} setUserLogin={setUserLogin}/>}/>
         <Route path='/userData' element = {<UserData/>} />
         <Route path='/create' element = {<Create userLogin={userLogin} setUserLogin={setUserLogin}/>} />
