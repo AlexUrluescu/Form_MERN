@@ -5,7 +5,8 @@ import "../css/NavBar.css"
 
 const NavBar = ({setUserLogin}) => {
 
-    const isLoggedIn = window.localStorage.getItem("loggedIn")
+    const isLoggedIn = window.localStorage.getItem("loggedIn");
+    const isAdmin = window.localStorage.getItem("isAdmin");
 
     const handleClick = () => {
         window.localStorage.clear();
@@ -22,8 +23,10 @@ const NavBar = ({setUserLogin}) => {
             <div className="links">
                 <Link className="link" to="/"> Home </Link>
                 <Link className="link" to="/forms"> Forms </Link>
-                <Link className="link" to="/create"> Create </Link>
+                
+                {isAdmin ? <Link className="link" to="/create"> Create </Link> : " "}
                 {isLoggedIn ? <Link className="logout" to="/login" onClick={handleClick}>Log out</Link>: <Link className="login" to="/login"> Login </Link>}
+
             </div>
         </div>
     )

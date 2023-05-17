@@ -69,6 +69,7 @@ function Forms({userLogin, setUserLogin}) {
                     <div key={index}>
                       <h1>{form.title}</h1>
                       <p>{form._id}</p>
+                      <p>{form.description}</p>
                     </div>
               
                   ))}
