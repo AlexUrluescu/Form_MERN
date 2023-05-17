@@ -174,13 +174,13 @@ export const userData = async (req, res) => {
 
 export const postForm1 = async (req, res) => {
     try {
-        const {title, label1, label2, label3, label4, label5, label6, user_name} = req.body;
+        const {title, description, label1, label2, label3, label4, label5, label6, user_name} = req.body;
         
         if(user_name === 'undefined undefined'){
             return res.json({status: "error"})
         }
      
-        const newForm = new Form1({title, label1, label2, label3, label4, label5, label6, user_name})
+        const newForm = new Form1({title, description, label1, label2, label3, label4, label5, label6, user_name})
     
         console.log(newForm);
         await newForm.save()

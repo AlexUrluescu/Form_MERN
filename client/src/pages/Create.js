@@ -2,11 +2,13 @@
 import NavBar from "../components/NavBar";
 
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../css/Create.css";
 
 const initialForm = {
     title: "",
+    description: "",
     label1: "",
     label2: "",
     label3: "",
@@ -18,6 +20,8 @@ const initialForm = {
 const Create = ({userLogin, setUserLogin}) => {
 
     const [ post, setPost ] = useState(initialForm);
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         
@@ -80,6 +84,7 @@ const Create = ({userLogin, setUserLogin}) => {
         if(data.status === "ok"){
             console.log('Post created succesfully');
             setPost(initialForm)
+            navigate("/forms")
         }
 
         else if(data.status === "error"){
@@ -99,6 +104,7 @@ const Create = ({userLogin, setUserLogin}) => {
                     <div className="create_form">
                         <form className="form_cont" onSubmit={handleSubmit}>
                             <input onChange={handleChange} value={post.title} type="text" placeholder="Title" name="title" />
+                            <input onChange={handleChange} value={post.description} type="text" placeholder="Description" name="description" />
                             <input onChange={handleChange} value={post.label1} type="text" placeholder="Question 1" name="label1" />
                             <input onChange={handleChange} value={post.label2} type="text" placeholder="Question 2" name="label2" />
                             <input onChange={handleChange} value={post.label3} type="text" placeholder="Question 3" name="label3" />
