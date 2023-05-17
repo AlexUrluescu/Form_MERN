@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path = '/' element = {<HomePage userLogin={userLogin} setUserLogin={setUserLogin} />} />
         <Route path="/register" element = {<Register />} />
-        <Route path = '/forms' element = {<Forms />} />
+        <Route path = '/forms' element = {<Forms userLogin={userLogin} setUserLogin={setUserLogin}/>} />
         <Route path='/login' element = {<Login setUserLogin={setUserLogin}/>}/>
         <Route path='/userData' element = {<UserData/>} />
         <Route path='/create' element = {<Create userLogin={userLogin} setUserLogin={setUserLogin}/>} />

@@ -7,7 +7,7 @@ import FormEx from '../components/FormEx'
 
 import { useState, useEffect } from 'react';
 
-function Forms() {
+function Forms({userLogin, setUserLogin}) {
 
   const [ forms, setForms ] = useState([]);
   
@@ -27,12 +27,36 @@ function Forms() {
 
     }
 
+    const sendData = async () => {
+      try {
+          const res = await fetch("http://localhost:5000/userData", {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({token: window.localStorage.getItem("token")})
+          });
+
+          const data = await res.json();
+
+          let userData = data.data;
+          setUserLogin(userData);
+          
+          
+      } catch (error) {
+          console.log(error);
+      }
+  }
+
+  sendData();
+
     fetchForms();
-  }, [])
+  }, [setUserLogin])
+
 
   return (
     <div>
-        <NavBar />
+        <NavBar setUserLogin={setUserLogin}/>
         <div className="container_forms">
                 <div className="div_title">Forms</div>
                 <div className="div_forms">
