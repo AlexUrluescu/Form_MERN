@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import myImage from "../static/poza3.png"
 import "../css/HomePage.css";
-import FormEx from "../components/FormEx";
+// import FormEx from "../components/FormEx";
 
 
 const HomePage = ({userLogin , setUserLogin}) => {
