@@ -7,20 +7,25 @@ import FormEx from '../components/FormEx'
 
 import { useState, useEffect } from 'react';
 
+import Loader from '../components/Loader';
+
 
 function Forms({userLogin, setUserLogin}) {
 
   const [ forms, setForms ] = useState([]);
+  const [loaderStatus, setLoaderStatus] = useState()
   
   useEffect(() => {
     const fetchForms = async () => {
 
       try {
-        const res = await fetch("http://localhost:5000/forms");
+        setLoaderStatus(true);
+        const res = await fetch("https://formmern.onrender.com/forms");
         const data = await res.json();
 
         console.log(data);
         setForms(data)
+        setLoaderStatus(false);
         
       } catch (error) {
           console.log(error);
@@ -30,7 +35,7 @@ function Forms({userLogin, setUserLogin}) {
 
     const sendData = async () => {
       try {
-          const res = await fetch("http://localhost:5000/userData", {
+          const res = await fetch("https://formmern.onrender.com/userData", {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
@@ -61,13 +66,16 @@ function Forms({userLogin, setUserLogin}) {
         <div className="container_forms">
                 <div className="div_title"><h2>Forms</h2></div>
                 <div className="div_forms">
-                  {forms.map((form, index) => (
-                      <FormEx key={index} 
-                        title = {form.title}
-                        description = {form.description}
-                        link= {form._id}/>
-                
-                    ))}
+                  {loaderStatus ? <Loader /> : <div>
+                    {forms.map((form, index) => (
+                        <FormEx key={index} 
+                          title = {form.title}
+                          description = {form.description}
+                          link= {form._id}/>
+                  
+                      ))}  
+                  </div>}
+                  
                 </div>
         </div>
 
