@@ -7,6 +7,7 @@ import FormEx from '../components/FormEx'
 
 import { useState, useEffect } from 'react';
 
+
 function Forms({userLogin, setUserLogin}) {
 
   const [ forms, setForms ] = useState([]);
@@ -60,19 +61,13 @@ function Forms({userLogin, setUserLogin}) {
         <div className="container_forms">
                 <div className="div_title">Forms</div>
                 <div className="div_forms">
-                    <FormEx title="Form 1" link="/firstForm"/>
-                    <FormEx title="Form 2" link="/secondForm"/>
-                </div>
-
-                <div>
                   {forms.map((form, index) => (
-                    <div key={index}>
-                      <h1>{form.title}</h1>
-                      <p>{form._id}</p>
-                      <p>{form.description}</p>
-                    </div>
-              
-                  ))}
+                      <FormEx key={index} 
+                        title = {form.title}
+                        description = {form.description}
+                        link= {form._id}/>
+                
+                    ))}
                 </div>
         </div>
 
