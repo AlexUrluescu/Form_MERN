@@ -20,7 +20,7 @@ function Forms({userLogin, setUserLogin}) {
 
       try {
         setLoaderStatus(true);
-        const res = await fetch("https://formmern.onrender.com/forms");
+        const res = await fetch("http://localhost:5000/forms");
         const data = await res.json();
 
         console.log(data);
@@ -35,7 +35,7 @@ function Forms({userLogin, setUserLogin}) {
 
     const sendData = async () => {
       try {
-          const res = await fetch("https://formmern.onrender.com/userData", {
+          const res = await fetch("http://localhost:5000/userData", {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
@@ -65,8 +65,8 @@ function Forms({userLogin, setUserLogin}) {
         <NavBar setUserLogin={setUserLogin}/>
         <div className="container_forms">
                 <div className="div_title"><h2>Forms</h2></div>
-                <div className="div_forms">
-                  {loaderStatus ? <Loader /> : <div>
+                <div >
+                  {loaderStatus ? <Loader /> : <div className="div_forms">
                     {forms.map((form, index) => (
                         <FormEx key={index} 
                           title = {form.title}

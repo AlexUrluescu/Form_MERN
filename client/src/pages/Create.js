@@ -27,7 +27,7 @@ const Create = ({userLogin, setUserLogin}) => {
         
         const sendData = async () => {
             try {
-                const res = await fetch("https://formmern.onrender.com/userData", {
+                const res = await fetch("http://localhost:5000/userData", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ const Create = ({userLogin, setUserLogin}) => {
 
         console.log(post);
 
-        const res = await fetch("https://formmern.onrender.com/form1", {
+        const res = await fetch("http://localhost:5000/form1", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
