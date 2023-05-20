@@ -1,6 +1,7 @@
 
 .container-fr{
-    background-color: #254E58;
+    background: rgba(237, 237, 237, 0.51);
+    margin-top: 50px;
     width: 100%;
 
     display: flex;
