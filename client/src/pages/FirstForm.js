@@ -23,7 +23,7 @@ const FirstForm = ({userLogin, setUserLogin}) => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const res = await fetch("http://localhost:5000/userData", {
+                const res = await fetch("https://formmern.onrender.com/userData", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -62,28 +62,6 @@ const FirstForm = ({userLogin, setUserLogin}) => {
 
         console.log("Trimis");
         alert("Formular trimis cu succes!")
-
-        // console.log(dataForm);
-
-        // const res = await fetch("http://localhost:5000/form1", {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify(dataForm)
-        // });
-
-        // const data = await res.json();
-        // console.log(data);
-
-        // if(data.status === "ok"){
-        //     console.log('Post created succesfully');
-        //     setDataForm(initalDataForm)
-        // }
-
-        // else if(data.status === "error"){
-        //     alert("Nu esti logat")
-        // }
 
     }
 

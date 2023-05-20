@@ -4,25 +4,15 @@ import { useEffect, useContext } from "react";
 import NavBar from "../components/NavBar";
 import UserContext from "../context/UserContext";
 
-// const initialUser = {
-//     first_name: '',
-//     last_name: '',
-//     age: '',
-//     city: '',
-//     email: '',
-//     password: ''
-// }
 
 const UserData = () => {
-
-    // const [ user, setUser ] = useState(initialUser);
 
     const {userLogin, setUserLogin} = useContext(UserContext)
 
     useEffect(() => {
         const sendData = async () => {
             try {
-                const res = await fetch("http://localhost:5000/userData", {
+                const res = await fetch("https://formmern.onrender.com/userData", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

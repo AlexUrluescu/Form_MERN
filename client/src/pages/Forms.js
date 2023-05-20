@@ -20,7 +20,7 @@ function Forms({userLogin, setUserLogin}) {
 
       try {
         setLoaderStatus(true);
-        const res = await fetch("http://localhost:5000/forms");
+        const res = await fetch("https://formmern.onrender.com/forms");
         const data = await res.json();
 
         console.log(data);
@@ -35,7 +35,7 @@ function Forms({userLogin, setUserLogin}) {
 
     const sendData = async () => {
       try {
-          const res = await fetch("http://localhost:5000/userData", {
+          const res = await fetch("https://formmern.onrender.com/userData", {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'

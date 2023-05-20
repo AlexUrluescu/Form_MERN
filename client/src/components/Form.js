@@ -20,7 +20,7 @@ const Form = () => {
         e.preventDefault();
 
         try {
-            const res = await fetch("http://localhost:5000/register", {
+            const res = await fetch("https://formmern.onrender.com/register", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -60,7 +60,6 @@ const Form = () => {
                 <input onChange={handleChange} value={formData.email} type="email" name="email" placeholder="Email"/>
                 <input onChange={handleChange} value={formData.password} type="password" name="password" placeholder="Password" />
 
-                {/* <input className="btn_register" type="submit" value="Register"/> */}
                 <button className="btn_register" type="submit">Register</button>
             </form>
         </div>

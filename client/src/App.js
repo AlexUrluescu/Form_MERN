@@ -7,19 +7,13 @@ import Forms from "./pages/Forms";
 
 function App() {
 
-  // const isLoggedIn = window.localStorage.getItem("loggedIn");
-
   const [ userLogin, setUserLogin ] = useState([])
-
-  // const handleUser = (data) => {
-  //   setUserLogin(data)
-  // }
 
   useEffect(() => {
 
     const sendData = async () => {
       try {
-          const res = await fetch("http://localhost:5000/userData", {
+          const res = await fetch("https://formmern.onrender.com/userData", {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'

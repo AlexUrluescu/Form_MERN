@@ -18,7 +18,7 @@ const HomePage = ({userLogin , setUserLogin}) => {
         const sendData = async () => {
                 try {
 
-                    const res = await fetch("http://localhost:5000/userData", {
+                    const res = await fetch("https://formmern.onrender.com/userData", {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -69,13 +69,6 @@ const HomePage = ({userLogin , setUserLogin}) => {
                     <img src={myImage} alt=""/>
                 </div>
             </div>
-            {/* <div className="container_forms">
-                <div className="div_title">Forms</div>
-                <div className="div_forms">
-                    <FormEx title="Form 1" link="/firstForm"/>
-                    <FormEx title="Form 2" link="/secondForm"/>
-                </div>
-            </div> */}
             
             <footer className="footer">
                 <span>Created by Madalina</span>

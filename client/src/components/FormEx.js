@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const FormEx = ({title, description, link}) => {
 
   console.log(title);
-  // console.log(form.title);
 
   return (
     <div className='form'>
