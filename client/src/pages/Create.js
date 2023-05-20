@@ -118,9 +118,10 @@ const Create = ({userLogin, setUserLogin}) => {
                     </div>
                 </div>
                 </div>
-                
-                
             </div>
+            <footer>
+                <span>Created by Madalina</span>
+            </footer>
             
         </div>
     )

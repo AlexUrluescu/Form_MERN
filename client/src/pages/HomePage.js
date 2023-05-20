@@ -77,7 +77,7 @@ const HomePage = ({userLogin , setUserLogin}) => {
                 </div>
             </div> */}
             
-            <footer>
+            <footer className="footer">
                 <span>Created by Madalina</span>
             </footer>
         </div> 

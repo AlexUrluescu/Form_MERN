@@ -25,6 +25,10 @@
     flex-wrap: wrap;
 }
 
+.cont_content{
+    text-align: center;
+}
+
 
 .form{
     /* background: rgba(255, 255, 255, 0.51); */
@@ -91,5 +95,6 @@ footer{
     text-align: center;
     padding: 10px;
     font-weight: 400;
-    margin-top: 230px;
+    margin-top: 380px;
 }
+

@@ -65,7 +65,7 @@ function Forms({userLogin, setUserLogin}) {
         <NavBar setUserLogin={setUserLogin}/>
         <div className="container_forms">
                 <div className="div_title"><h2>Forms</h2></div>
-                <div >
+                <div className='cont_content'>
                   {loaderStatus ? <Loader /> : <div className="div_forms">
                     {forms.map((form, index) => (
                         <FormEx key={index} 
