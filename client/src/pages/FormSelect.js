@@ -40,7 +40,7 @@ const FormSelect = ({setUserLogin}) => {
 
     useEffect(() => {
         const fetchForm = async () => {
-            const res = await fetch(`https://formmern.onrender.com/forms/${id}`);
+            const res = await fetch(`http://localhost:5000/forms/${id}`);
             const data = await res.json();
 
             console.log(data);

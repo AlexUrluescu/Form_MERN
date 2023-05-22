@@ -1,19 +1,16 @@
 import React from 'react'
 
-import "../css/Forms.css";
-
-import NavBar from '../components/NavBar'
-import FormEx from '../components/FormEx'
-
-import { useState, useEffect } from 'react';
-
+import NavBar from '../components/NavBar';
 import Loader from '../components/Loader';
+import FormEdit from '../components/FormEdit';
 
+import {useState, useEffect} from "react"
+import "../css/FormsEdit.css"
 
-function Forms({userLogin, setUserLogin}) {
+const MyForms = ({userLogin, setUserLogin}) => {
 
-  const [ forms, setForms ] = useState([]);
-  const [loaderStatus, setLoaderStatus] = useState()
+    const [ forms, setForms ] = useState([]);
+    const [loaderStatus, setLoaderStatus] = useState()
   
   useEffect(() => {
     const fetchForms = async () => {
@@ -58,32 +55,26 @@ function Forms({userLogin, setUserLogin}) {
 
     fetchForms();
   }, [setUserLogin])
-
-
   return (
     <div>
         <NavBar setUserLogin={setUserLogin}/>
-        <div className="container_forms">
-                <div className="div_title"><h2>Forms</h2></div>
-                <div className='cont_content'>
-                  {loaderStatus ? <Loader /> : <div className="div_forms">
-                    {forms.map((form, index) => (
-                        <FormEx key={index} 
-                          title = {form.title}
-                          description = {form.description}
-                          link= {form._id}/>
-                  
-                      ))}  
-                  </div>}
-                  
-                </div>
+        <div className="create_container1">
+            <h2>My Forms</h2>
         </div>
-
+        <div className='cont_formsEdit'>
+            {forms.map((form, index) => (
+                <FormEdit key={index} 
+                title = {form.title}
+                description = {form.description}
+                id = {form._id}/>
+            ))}
+        </div>
         <footer>
-                <span>Created by Madalina</span>
+            <span>Created by Madalina</span>
         </footer>
     </div>
+   
   )
 }
 
-export default Forms
+export default MyForms

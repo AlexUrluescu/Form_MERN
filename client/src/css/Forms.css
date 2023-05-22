@@ -51,6 +51,24 @@
     transform: scale(1.02);
 }
 
+.formEdit{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+
+    width: 280px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+
+}
+
+.formEdit button{
+    cursor: pointer;
+}
+
 .form_title{
     text-align: center;
     /* margin-bottom: 20px; */

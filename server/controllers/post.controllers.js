@@ -56,7 +56,7 @@ export const updatePost = async (req, res) => {
 
 export const deletePost = async (req, res) => {
     try {
-        const postRemoved = await Post.findByIdAndDelete(req.params.id);
+        const postRemoved = await Form1.findByIdAndDelete(req.params.id);
 
         if(!postRemoved) return res.sendStatus(404)
 
@@ -64,7 +64,7 @@ export const deletePost = async (req, res) => {
             await deleteImage(postRemoved.public_id)
         }
     
-        return res.sendStatus(204)
+        return res.status(200).json({message: "Deleted"})
 
     } catch (error) {
         return res.status(500).json({message: error.message})

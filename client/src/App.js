@@ -1,4 +1,4 @@
-import { NotFoundPage, HomePage, Register, Login, FirstForm, Create, FormSelect } from "./pages";
+import { NotFoundPage, HomePage, Register, Login, FirstForm, Create, FormSelect, MyForms, EditForm } from "./pages";
 import {Routes, Route } from "react-router-dom";
 import UserData from "./pages/UserData";
 import { useState, useEffect } from "react";
@@ -13,7 +13,7 @@ function App() {
 
     const sendData = async () => {
       try {
-          const res = await fetch("https://formmern.onrender.com/userData", {
+          const res = await fetch("http://localhost:5000/userData", {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
@@ -47,9 +47,11 @@ function App() {
         <Route path="/register" element = {<Register />} />
         <Route path = '/forms' element = {<Forms userLogin={userLogin} setUserLogin={setUserLogin}/>} />
         <Route path="/forms/:id" element = {<FormSelect setUserLogin={setUserLogin} />}/>
+        <Route path="/myforms/:id" element = {<EditForm setUserLogin={setUserLogin} />}/>
         <Route path='/login' element = {<Login userLogin = {userLogin} setUserLogin={setUserLogin}/>}/>
         <Route path='/userData' element = {<UserData/>} />
         <Route path='/create' element = {<Create userLogin={userLogin} setUserLogin={setUserLogin}/>} />
+        <Route path='/myforms' element = {<MyForms userLogin={userLogin} setUserLogin={setUserLogin}/>} />
         <Route path="/firstForm" element = {<FirstForm userLogin={userLogin} setUserLogin={setUserLogin}/>} />
         <Route path = '*' element = {<NotFoundPage />} />
       </Routes>

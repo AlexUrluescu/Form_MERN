@@ -6,6 +6,8 @@ import FirstForm from "./FirstForm";
 import Forms from "./Forms";
 import Create from "./Create";
 import FormSelect from "./FormSelect";
+import MyForms from "./MyForms";
+import EditForm from "./EditForm";
 
 
 export {
@@ -16,5 +18,7 @@ export {
     FirstForm,
     Forms,
     Create,
-    FormSelect
+    FormSelect,
+    MyForms, 
+    EditForm
 }

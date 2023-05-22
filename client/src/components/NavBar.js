@@ -25,6 +25,7 @@ const NavBar = ({setUserLogin}) => {
                 <Link className="link" to="/forms"> Forms </Link>
                 
                 {isAdmin ? <Link className="link" to="/create"> Create </Link> : " "}
+                {isAdmin ? <Link className="link" to="/myforms"> My Forms </Link> : " "}
                 {isLoggedIn ? <Link className="logout" to="/login" onClick={handleClick}>Log out</Link>: <Link className="login" to="/login"> Login </Link>}
 
             </div>
