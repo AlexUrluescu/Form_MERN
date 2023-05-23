@@ -86,7 +86,7 @@ const EditForm = ({setUserLogin}) => {
         <div>
             <NavBar setUserLogin={setUserLogin}/>
             <div className="main">
-                <h2>Edit form</h2>
+                <h2 style={{textAlign: "center", fontSize:"40px"}}>Edit form</h2>
             </div>
             <div>
               <form className="form_cont" onSubmit={handleSubmit}>
@@ -100,7 +100,7 @@ const EditForm = ({setUserLogin}) => {
                             <input onChange={handleChange} value={postEdit.label6} type="text" placeholder="Question 6" name="label6" />
 
                             {/* <button onClick={handleEdit} className="btn_create"><b>Send</b></button> */}
-                            <input type="submit" value="Edit"/>
+                            <input id="btn_form" type="submit" value="Edit"/>
                 </form>
             </div>
 
