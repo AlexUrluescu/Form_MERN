@@ -3,6 +3,8 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
+import { url } from '../static/url';
+
 import "../css/Create.css";
 
 import NavBar from '../components/NavBar';
@@ -40,7 +42,7 @@ const FormSelect = ({setUserLogin}) => {
 
     useEffect(() => {
         const fetchForm = async () => {
-            const res = await fetch(`http://localhost:5000/forms/${id}`);
+            const res = await fetch(`${url}/forms/${id}`);
             const data = await res.json();
 
             console.log(data);

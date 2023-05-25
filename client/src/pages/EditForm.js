@@ -7,6 +7,8 @@ import {useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
+import { url } from "../static/url";
+
 const initialDataForm = {
   title: "",
   description: "",
@@ -27,7 +29,7 @@ const EditForm = ({setUserLogin}) => {
 
     useEffect(() => {
       const fetchForm = async () => {
-        const res = await fetch(`http://localhost:5000/forms/${id}`);
+        const res = await fetch(`${url}/forms/${id}`);
         const data = await res.json();
 
         console.log(data);
@@ -53,7 +55,7 @@ const EditForm = ({setUserLogin}) => {
 
 
 
-        const data = await fetch(`http://localhost:5000/posts/${id}`, {
+        const data = await fetch(`${url}/posts/${id}`, {
             method:'PUT',
             headers: {
                 'Content-Type': 'application/json'

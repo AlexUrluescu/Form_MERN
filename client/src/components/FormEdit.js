@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { url } from "../static/url";
 
 
 const FormEdit = ({title, description, id}) => {
@@ -7,7 +8,7 @@ const FormEdit = ({title, description, id}) => {
     // console.log("delete");
     try {
 
-      const data = await fetch(`http://localhost:5000/posts/${id}`, {
+      const data = await fetch(`${url}/posts/${id}`, {
           method:'DELETE'
       })
 

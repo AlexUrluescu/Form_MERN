@@ -4,6 +4,8 @@ import NavBar from "../components/NavBar";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { url } from "../static/url";
+
 import "../css/Create.css";
 
 const initialForm = {
@@ -27,7 +29,7 @@ const Create = ({userLogin, setUserLogin}) => {
         
         const sendData = async () => {
             try {
-                const res = await fetch("http://localhost:5000/userData", {
+                const res = await fetch(`${url}/userData`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -70,7 +72,7 @@ const Create = ({userLogin, setUserLogin}) => {
 
         console.log(post);
 
-        const res = await fetch("http://localhost:5000/form1", {
+        const res = await fetch(`${url}/form1`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

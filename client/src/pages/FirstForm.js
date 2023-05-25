@@ -1,7 +1,9 @@
 
 import NavBar from "../components/NavBar";
 
-import "../css/FirstForm.css"
+import "../css/FirstForm.css";
+
+import { url } from "../static/url";
 
 import { useState, useEffect } from "react"
 
@@ -23,7 +25,7 @@ const FirstForm = ({userLogin, setUserLogin}) => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const res = await fetch("http://localhost:5000/userData", {
+                const res = await fetch(`${url}/userData`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

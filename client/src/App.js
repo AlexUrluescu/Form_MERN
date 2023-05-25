@@ -4,6 +4,8 @@ import UserData from "./pages/UserData";
 import { useState, useEffect } from "react";
 import Forms from "./pages/Forms";
 
+import { url } from "./static/url";
+
 
 function App() {
 
@@ -13,7 +15,7 @@ function App() {
 
     const sendData = async () => {
       try {
-          const res = await fetch("http://localhost:5000/userData", {
+          const res = await fetch(`${url}/userData`, {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'

@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import NavBar from "../components/NavBar";
 
+import { url } from "../static/url";
 
 // import UserContext from "../context/UserContext";
 import { Link } from "react-router-dom";
@@ -18,7 +19,7 @@ const HomePage = ({userLogin , setUserLogin}) => {
         const sendData = async () => {
                 try {
 
-                    const res = await fetch("http://localhost:5000/userData", {
+                    const res = await fetch(`${url}/userData`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

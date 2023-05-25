@@ -4,6 +4,8 @@ import { useEffect, useContext } from "react";
 import NavBar from "../components/NavBar";
 import UserContext from "../context/UserContext";
 
+import { url } from "../static/url";
+
 
 const UserData = () => {
 
@@ -12,7 +14,7 @@ const UserData = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const res = await fetch("http://localhost:5000/userData", {
+                const res = await fetch(`${url}/userData`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
