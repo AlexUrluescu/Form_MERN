@@ -15,6 +15,9 @@ const user = {
 
 const Form = () => {
 
+    // const formData = user
+    // formData = 'Mada'
+
     const [formData, setFormData] = useState(user);
     const navigate = useNavigate();
 
